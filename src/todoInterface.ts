@@ -2,6 +2,11 @@
  * 待辦事項介面已被移除，你需要自己定義一個新的待辦事項介面。
  * 待辦事項介面應該包含 id、task 和 completed 三個屬性，分別為數字型別、字串型別和布林型別。
  */
+interface Todo {
+    id: number;
+    task: string;
+    completed: boolean;
+}
 
 /**
  * 新增待辦事項
@@ -15,5 +20,16 @@
 
 export function addTodo(todos: Todo[], task: string): Todo[] {
     // 在此實現函式
+    // 找出現有待辦事項中最大的 id
+    const maxId = todos.length > 0 ? Math.max(...todos.map(todo => todo.id)) : 0;
+
+    // 創建新的待辦事項
+    const newTodo: Todo = {
+        id: maxId + 1,
+        task: task,
+        completed: false
+    };
+
+    // 將新的待辦事項添加到現有的待辦事項陣列中
     return [...todos, newTodo];
 }
