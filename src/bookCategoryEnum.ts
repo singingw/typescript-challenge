@@ -24,6 +24,7 @@ export enum BookCategory {
  */
 
 export function getBookCategory(category: BookCategory): string {
+  // 在此實現函式
   // 使用 switch 敘述來根據不同的書籍類別返回對應的描述
   switch (category) {
     case BookCategory.Novel:
