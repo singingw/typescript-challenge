@@ -7,12 +7,10 @@
 
 
 export function asyncSum(numbers: number[]): Promise<number> {
-    return new Promise((resolve, reject) => {
-        try {
-            // 請在此處寫下你的程式碼
-        } catch (error) {
-            reject(error);
-        }
+    return Promise.resolve().then(() => {
+        // 使用 reduce 方法計算陣列中所有數字的總和
+        const sum = numbers.reduce((acc, num) => acc + num, 0);
+        return sum;
     });
 }
 

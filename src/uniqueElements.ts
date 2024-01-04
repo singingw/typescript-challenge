@@ -6,4 +6,11 @@
  */
 export function uniqueElements(array: number[]): number[] {
     // 請在此處寫下你的程式碼
+    // 使用 Set 來創建包含唯一元素的集合
+    const uniqueSet = new Set(array);
+    // 將 Set 轉換為陣列
+    const uniqueArray = Array.from(uniqueSet);
+
+    return uniqueArray;
 }
+
